@@ -99,8 +99,12 @@ section h2 {
 }
 
 .container a {
-  line-break: anywhere;
+  line-break: strict;
   color: var(--red)
+}
+
+.container .doi {
+  line-break: anywhere;
 }
 
 .container a:active {
@@ -189,12 +193,12 @@ td h3 {
   #profile-pic {
     margin: 0;
     float: right;
-    right: -4rem;
+    right: -3rem;
     shape-outside: circle();
   }
 
   .large-screen {
-    display: inline;
+    display: table-cell;
   }
 
   .small-screen {
