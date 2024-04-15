@@ -174,7 +174,10 @@ td h3 {
 
 .small-screen {
   position: relative;
-  left: 1rem;
+}
+
+.small-screen td {
+  padding-left: 1.5rem;
 }
 
 .large-screen {
