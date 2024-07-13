@@ -1,44 +1,56 @@
 * {
-  --graybrack: #4C6472;
-  --blueish:#57a4b2;
-  --lightgreen:#B0D894;
-  --strongyellow:#FADE89;
-  --red:#F95355;
+  --graybrack: hsl(202, 20%, 37%);
+  --blueish:hsl(189, 37%, 52%);
+  --lightgreen:hsl(95, 50%, 65%);
+  --strongyellow:hsl(45, 92%, 76%);
+  --red:hsl(360, 90%, 60%);
 
-  /*before
-  rgb(148,185,255)
-  rgb(205,255,216)
-  linear-gradient(135deg, rgba(148,185,255,1) 0%, rgba(205,255,216,1) 100%);
-  
-  */
+  --parchment: hsl(40, 45%, 90%);
+  --dark-parchment: hsl(40,45%, 60%);
+  --brown: hsl(40, 45%, 30%);
+  --dark-brown: hsl(40,45%, 20%);
+
+  --border: var(--brown);
+  --header: var(--dark-parchment);
+  --text: var(--dark-brown);
 }
 
 html {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
-  color: var(--graybrack);
+  color: var(--text);
   -webkit-text-size-adjust:none;
 }
 
 body {
-  background-color: var(--blueish);
+  background-color: hsl(40, 45%, 90%);
+  background-color: var(--parchment);
 }
 
 header {
-  background: var(--graybrack);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  background: hsl(95, 50%, 65%);
+  background: var(--header);
   position: sticky;
   top: 0px;
   z-index: 999;
   color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 header h1 {
   display: none;
   margin: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+  flex-grow: 0;
+  font-weight: normal;
+}
+
+nav {
+  display: inline-block;
+  flex-grow: 1;
 }
 
 nav ul {
@@ -51,23 +63,27 @@ nav ul {
 
 nav li {
   color: inherit;
-  display: inline-flex;
+  list-style: none;
+  flex-grow: 1;
+  text-align: center;
   margin: 0.5rem;
 }
 
 nav a {
   color: inherit;
   text-decoration: none;
+  text-align: inherit;
 }
 
 section {
   margin: 3rem auto;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  padding: 2rem 2rem 1.5rem 2rem;
   background-color: white;
   border-radius: 1rem;
   width: 95%;
   max-width: 800px;
-  color: var(--graybrack);
+  color: inherit;
+  border: 2px solid var(--border);
 }
 
 .container {
@@ -78,10 +94,21 @@ section {
 section h2 {
   float: left;
   position: absolute;
-  top: -3rem;
-  padding: 0 0.5rem;
-  background: hsla(189, 37%, 90%,0.7);
+  top: -3.5rem;
+  padding: 0.5rem 2rem;
+  background: white;
   border-radius: 20px;
+  font-weight: 500;
+}
+
+.hoverable {
+  color: hsl(360, 90%, 60%);
+  color:var(--red);
+}
+
+.hoverable:hover {
+  color: hsl(202, 20%, 37%);
+  color: var(--text);
 }
 
 #profile-pic {
@@ -90,7 +117,7 @@ section h2 {
   top: -5px;
   width: 8rem;
   height: 8rem;
-  border: 1px solid var(--graybrack);
+  border: 2px solid var(--border);
   border-radius: 50%;
   background-color: white;
   font-size: 0.75rem;
@@ -108,15 +135,15 @@ section h2 {
 }
 
 .container a:active {
-  color: var(--graybrack);
+  color: var(--text);
 }
 
 .container a:visited {
-  color: var(--graybrack);
+  color: var(--text);
 }
 
 .container h3,h4,h5,h6,p,ul,li {
-  color: var(--graybrack);
+  color: var(--text);
 }
 
 table {
@@ -138,7 +165,7 @@ td h3 {
   display: inline-block;
   width: 0;
   height: 0;
-  border-left: 0.8rem solid var(--graybrack);
+  border-left: 0.8rem solid var(--border);
   border-top: 0.5rem solid transparent;
   border-bottom: 0.5rem solid transparent;
   cursor: pointer;
@@ -149,7 +176,7 @@ td h3 {
   display: inline-block;
   width: 0;
   height: 0;
-  border-top: 0.8rem solid var(--graybrack);
+  border-top: 0.8rem solid var(--border);
   border-left: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
   cursor: pointer;
@@ -211,13 +238,13 @@ td h3 {
 
 @media only screen and (min-width: 780px){
   header h1 {
-    display: inline;
+    display: inline-block;
     font-size: 1.5rem;
   }
 }
 
-@media only screen and (min-width : 900px) {
+@media only screen and (min-width : 1000px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
